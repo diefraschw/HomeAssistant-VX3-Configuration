@@ -7,7 +7,7 @@ The environment is as follows:
 
 gw_configuration.templates:
   - lib\systemd\system:
-    templates for the files to put in the linux directory \lib\systemd\system to define the polling and listening for open3e an E3onCAN as linux service
+    templates for the files to put into the linux directory \lib\systemd\system to define the polling and listening for open3e an E3onCAN as linux services
   - admin:
     shell scripts to start, stop, restart and display the status of these services
   - open3E.config:
