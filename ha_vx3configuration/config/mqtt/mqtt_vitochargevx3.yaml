@@ -1,0 +1,416 @@
+# DID 1664
+- name: Electrical Energy Storage State Of Charge
+  unique_id: VX3ElectricalEnergyStorageStateOfChargeFromCAN
+  device:
+     name: VitochargeVX3
+     identifiers:
+       - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1664_ElectricalEnergyStorageStateOfCharge
+  device_class: energy
+  unit_of_measurement: '%'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+# DID 1801
+- name: Battery Charge Today
+  unique_id: VX3PVBatteryChargeTodayFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryChargeToday
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Charge Week
+  unique_id: VX3PVBatteryChargeWeekFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryChargeWeek
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Charge Month
+  unique_id: VX3PVBatteryChargeMonthFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryChargeMonth
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Charge Year
+  unique_id: VX3PVBatteryChargeYearFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryChargeYear
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Charge Total
+  unique_id: VX3PVBatteryChargeTotalFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryChargeTotal
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Discharge Today
+  unique_id: VX3PVBatteryDischargeTodayFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryDischargeToday
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Discharge Week
+  unique_id: VX3PVBatteryDischargeWeekFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryDischargeWeek
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Discharge Month
+  unique_id: VX3PVBatteryDischargeMonthFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryDischargeMonth
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Discharge Year
+  unique_id: VX3PVBatteryDischargeYearFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryDischargeYear
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Battery Discharge Total
+  unique_id: VX3PVBatteryDischargeTotalFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1801_ElectricalEnergyStorageEnergyTransferStatistic/BatteryDischargeTotal
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+# DID 1836
+- name: Current Battery Load
+  unique_id: VX3PVBatteryLoadFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1836_ElectricalEnergyStorageCurrentPower
+  device_class: power
+  unit_of_measurement: W
+  qos: 0
+# DID 1831
+- name: PV Production on String1
+  unique_id: VX3PVProductionString1FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1831_PhotovoltaicCurrentStringPower/String1
+  device_class: power
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: W
+  qos: 0
+- name: PV Production on String2
+  unique_id: VX3PVProductionString2FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1831_PhotovoltaicCurrentStringPower/String2
+  device_class: power
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: W
+  qos: 0
+- name: PV Production on String3
+  unique_id: VX3PVProductionString3FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1831_PhotovoltaicCurrentStringPower/String3
+  device_class: power
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: W
+  qos: 0
+# DID 1802
+- name: Photovoltaic Production Today
+  unique_id: VX3PVProductionTodayFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1802_EnergyProductionPhotovoltaic/PhotovoltaicProductionToday
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Photovoltaic Production Week
+  unique_id: VX3PVProductionWeekFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1802_EnergyProductionPhotovoltaic/PhotovoltaicProductionWeek
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Photovoltaic Production Month
+  unique_id: VX3PVProductionMonthFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1802_EnergyProductionPhotovoltaic/PhotovoltaicProductionMonth
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Photovoltaic Production Year
+  unique_id: VX3PVProductionYearFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1802_EnergyProductionPhotovoltaic/PhotovoltaicProductionYear
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+- name: Photovoltaic Production Total
+  unique_id: VX3PVProductionTotalFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1802_EnergyProductionPhotovoltaic/PhotovoltaicProductionTotal
+  device_class: energy
+  unit_of_measurement: kWh
+  value_template: '{{ value_json | float / 1000.0 }}'
+  state_class: total_increasing
+  qos: 0
+# DID 1824
+- name: Three Phase Inverter Current Power cumulated
+  unique_id: VX3ThreePhaseInverterCurrentPowercumulatedFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1824_ThreePhaseInverterCurrentPower/cumulated
+  device_class: power
+  unit_of_measurement: W
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Three Phase Inverter Current Power L1
+  unique_id: VX3ThreePhaseInverterCurrentPowerL1FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1824_ThreePhaseInverterCurrentPower/L1
+  device_class: power
+  unit_of_measurement: W
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Three Phase Inverter Current Power L2
+  unique_id: VX3ThreePhaseInverterCurrentPowerL2FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1824_ThreePhaseInverterCurrentPower/L2
+  device_class: power
+  unit_of_measurement: W
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Three Phase Inverter Current Power L3
+  unique_id: VX3ThreePhaseInverterCurrentPowerL3FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1824_ThreePhaseInverterCurrentPower/L3
+  device_class: power
+  unit_of_measurement: W
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+# DID 1832
+- name: Photovoltaic String Current on String1
+  unique_id: VX3PhotovoltaicStringCurrentString1FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1832_PhotovoltaicStringCurrent/String1
+  device_class: current
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: A
+  qos: 0
+- name: Photovoltaic String Current on String2
+  unique_id: VX3PhotovoltaicStringCurrentString2FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1832_PhotovoltaicStringCurrent/String2
+  device_class: current
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: A
+  qos: 0
+- name: Photovoltaic String Current on String3
+  unique_id: VX3PhotovoltaicStringCurrentString3FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1832_PhotovoltaicStringCurrent/String3
+  device_class: current
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: A
+  qos: 0
+# DID 1833
+- name: Photovoltaic String Voltage on String1
+  unique_id: VX3PhotovoltaicStringVoltageString1FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1833_PhotovoltaicStringVoltage/String1
+  device_class: voltage
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: V
+  qos: 0
+- name: Photovoltaic String Voltage on String2
+  unique_id: VX3PhotovoltaicStringVoltageString2FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1833_PhotovoltaicStringVoltage/String2
+  device_class: voltage
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: V
+  qos: 0
+- name: Photovoltaic String Voltage on String3
+  unique_id: VX3PhotovoltaicStringVoltageString3FromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1833_PhotovoltaicStringVoltage/String3
+  device_class: voltage
+  value_template: |-
+  
+    {% if value_json | float < 65000.0 %}
+        {{ value_json | float }}
+    {% endif %}
+  unit_of_measurement: V
+  qos: 0
+# DID 1603
+- name: Point Of Common Coupling Power Active Power
+  unique_id: E380PointOfCommonCouplingPowerActivePowerFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1603_PointOfCommonCouplingPower/ActivePower
+  device_class: power
+  value_template: '{{ value_json | float }}'
+  unit_of_measurement: W
+  qos: 0
+- name: Point Of Common Coupling Power Reactive Power
+  unique_id: E380PointOfCommonCouplingPowerReactivePowerFromCAN
+  device:
+    name: VitochargeVX3
+    identifiers:
+      - vitochargevx3
+  state_topic: open3e/vx3/0x680_680_1603_PointOfCommonCouplingPower/ReactivePower
+  device_class: power
+  value_template: '{{ value_json | float }}'
+  unit_of_measurement: W
+  qos: 0

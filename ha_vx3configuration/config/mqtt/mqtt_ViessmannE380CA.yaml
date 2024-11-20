@@ -1,0 +1,137 @@
+# E3onCAN DID 592: Active Power
+- name: Active Power L1
+  unique_id: E380CA_ActivePowerL1_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0592_GridActivePower/L1
+  device_class: power
+  unit_of_measurement: 'W'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Active Power L2
+  unique_id: E380CA_ActivePowerL2_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0592_GridActivePower/L2
+  device_class: power
+  unit_of_measurement: 'W'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Active Power L3
+  unique_id: E380CA_ActivePowerL3_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0592_GridActivePower/L3
+  device_class: power
+  unit_of_measurement: 'W'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Active Power Total
+  unique_id: E380CA_ActivePowerTotal_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0592_GridActivePower/Total
+  device_class: power
+  unit_of_measurement: 'W'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+# E3onCAN DID 594: reactive Power
+# E3onCAN DID 596: current + cosPhi
+- name: cosPhi
+  unique_id: E380CA_cosPhi_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0596_GridCurrent/cosPhi
+  device_class: power
+  unit_of_measurement: ''
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+# E3onCAN DID 598: voltage + frequency
+- name: Frequency
+  unique_id: E380CA_frequency_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0598_GridVoltage/Frequency
+  device_class: frequency
+  unit_of_measurement: 'Hz'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Voltage L1
+  unique_id: E380CA_voltageL1_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0598_GridVoltage/L1
+  device_class: voltage
+  unit_of_measurement: 'V'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Voltage L2
+  unique_id: E380CA_voltageL2_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0598_GridVoltage/L2
+  device_class: voltage
+  unit_of_measurement: 'V'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+- name: Voltage L3
+  unique_id: E380CA_voltageL3_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0598_GridVoltage/L3
+  device_class: voltage
+  unit_of_measurement: 'V'
+  value_template: '{{ value_json | float }}'
+  state_class: measurement
+  qos: 0
+# E3onCAN DID 600: energy import and export
+- name: Cumulated Import
+  unique_id: E380CA_CumulatedImport_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0600_GridEnergy/ImportCumulated
+  device_class: energy
+  unit_of_measurement: 'kWh'
+  value_template: '{{ value_json | float | round(3)  }}'
+  state_class: total_increasing
+  qos: 0
+- name: Cumulated Export
+  unique_id: E380CA_CumulatedExport_E3onCAN
+  device:
+     name: E380CA
+     identifiers:
+       - e380ca
+  state_topic: open3e/e380/e380_0600_GridEnergy/ExportCumulated
+  device_class: energy
+  unit_of_measurement: 'kWh'
+  value_template: '{{ value_json | float | round(3)  }}'
+  state_class: total_increasing
+  qos: 0

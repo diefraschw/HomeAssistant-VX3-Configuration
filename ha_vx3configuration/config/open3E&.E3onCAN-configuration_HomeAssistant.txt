@@ -1,0 +1,21 @@
+# Integration of open3E and E3onCAN for Viessmann Vitocharge VX3
+# HOME ASSISTANT (HA)
+################################################################
+# Prerequisits:
+###############
+# Home Assistant on Raspery Pi4 running Ubuntu 22.04
+# 1. Home Assistant installed and running
+# 2. mqtt integration installed in HA
+
+# entry in main HA configuration file "configuration.yaml" in directory <HA-root>/config
+########################################################################################
+
+# Definition der eigenen MQTT Konfigurationen
+mqtt:
+  sensor: !include_dir_merge_list mqtts
+  
+# files in directory <HA-root>/config/mqtts:
+############################################
+mqtt_ViessmannE380CA.yaml
+mqtt_vitochargevx3.yaml
+
