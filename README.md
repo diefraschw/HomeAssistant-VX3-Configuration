@@ -1,0 +1,1 @@
+# HomeAssistant-VX3-Configuration
