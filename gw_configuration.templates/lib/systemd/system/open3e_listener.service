@@ -1,0 +1,13 @@
+[Unit]
+Description=Open3e VX3 listener Service Script
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 30
+Restart=on-failure
+User=<unixuser>
+ExecStart=/bin/bash -c 'cd /home/<unixuser>/open3e/ && source .venv/bin/activate && open3e @../open3e.config/args_listener'
+
+[Install]
+WantedBy=multi-user.target

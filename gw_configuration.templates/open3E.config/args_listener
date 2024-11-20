@@ -1,0 +1,12 @@
+--can
+can0
+--mqtt
+<gateway-hostname>:1883:open3e
+--mqttformatstring
+{device}_{ecuAddr:03X}_{didNumber}_{didName}
+--mqttuser
+<mqtt-user>:<mqtt-password>
+--listen
+open3e/cmnd
+--config
+devices.json

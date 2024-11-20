@@ -1,0 +1,13 @@
+[Unit]
+Description=Open3e VX3 Service Script polling 15s
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 30
+Restart=on-failure
+User=<unix-user>
+ExecStart=/bin/bash -c 'cd /home/<unix-user>/open3e/ && source .venv/bin/activate && open3e @../open3e.config/args_vx3_15s'
+
+[Install]
+WantedBy=multi-user.target

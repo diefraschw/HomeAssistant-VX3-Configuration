@@ -1,0 +1,13 @@
+[Unit]
+Description=E3onCAN based on Open3e e380ca Service Script decoding all 15s
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 30
+Restart=on-failure
+User=<unix-user>
+ExecStart=/bin/bash -c 'cd /home/<unix-user>/E3onCAN && python3 E3onCANcollect.py -c can0 -dev e380 -g 15 -m <gateway-hostname>:1883:open3e/e380 -muser <mqtt-user> -mpass <mqtt-password> -mfstr {device}_{didNumber:04d}_{didName}'
+
+[Install]
+WantedBy=multi-user.target

@@ -1,1 +1,51 @@
+# Integration of open3E and E3onCAN for Viessmann Vitocharge VX3
+# GATEWAY SERVER (polls VX3 and E380CA and sends data to mqtt broker)
+################################################################
+
+# Prerequisits:
+###############
+# Gateway server Raspery Pi4 running Ubuntu 22.04
+# 1. mqtt broker running (mosquitto)
+# 2. CAN to USB adapter is installed (see https://github.com/open3e/open3e/wiki/020-Inbetriebnahme-CAN-Adapter-am-Raspberry)
+# 3. open3E installed
+#    (see https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments
+#         https://github.com/open3e/open3e/blob/master/README.md)
+# 4. E3onCAN installed (see https://github.com/MyHomeMyData/E3onCAN)
+
+# Definition of services on open3e gateway server (running on Ubuntu 22.04)
+###########################################################################
+# files in directory /lib/systemd/system
+
+# /home/<unix-user>/E3onCAN is the installation directory of E3onCAN
+# /home/<unix-user>/open3e/ is the installation directory of open3e
+# /home/<unix-user>/open3e.config is the directory containing the open3e configuration files
+
+# replace <unix-user> by unix user which runs the services
+# replace <mqtt-user> by the mqtt broker user name
+# replace <mqtt-password> by mqtt password for <mqtt-user>
+# replace <gateway-hostname> by hostname of the server the mqtt broker service is running
+
+E3onCAN_E380CA_15s.service
+open3e_listener.service
+open3e_vx3_15s.service
+open3e_vx3_5min.service
+mosquitto.service
+
+# open3E configuration files for services (e.g. in directory /home/<username>/E3onCAN.config)
+#############################################################################################
+# defines the parameters for the open3e services
+# replace <mqtt-user> by the mqtt broker user name
+# replace <mqtt-password> by mqtt password for <mqtt-user>
+# replace <gateway-hostname> by hostname of the server the mqtt broker service is running
+
+args_listener
+args_vx3_5min
+args_vx3_15s
+
+# scripts to manage services (e.g. in directory /home/<username>/admin)
+#######################################################################
+restart.sh
+start.sh
+status.sh
+stop.sh
 

@@ -1,0 +1,14 @@
+--can
+can0
+--mqtt
+<gateway-hostname>:1883:open3e/vx3
+--mqttformatstring
+{device}_{ecuAddr:03X}_{didNumber}_{didName}
+--mqttuser
+<mqtt-user>:<mqtt-password>
+--read
+1801,1802
+--timestep
+300
+--config
+devices.json
